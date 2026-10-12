@@ -1,43 +1,53 @@
 # Modeling the Regulatory Effects of Non-Coding Variants with AlphaGenome and CNN-Based Enhancer Classification
 
-**NIH / National Library of Medicine (NLM) | Approved research poster**
+**NIH / National Library of Medicine (NLM) | Approved research poster**  
+**Poster authors:** Yash Maheshwaran, Gaetano Manzo, and Ivan Ovcharenko
 
-**Authors:** Yash Maheshwaran, Gaetano Manzo, and Ivan Ovcharenko
+**[View the approved NIH research poster (PDF)](NIH_AlphaGenome_Poster_Yash_Maheshwaran.pdf)**
 
-## Overview
+## Research leadership and contributions
 
-Noncoding genetic variants can alter enhancer activity, but linking their regulatory effects to downstream gene expression and identifying plausible target genes remains challenging. This research investigates whether an integrated approach combining K562 enhancer classification, AlphaGenome-predicted RNA effects, and independent gene-link evidence can help prioritize variant-to-gene hypotheses.
+**Yash Maheshwaran — lead computational researcher and first author of the poster.** I conducted the primary computational research and created the poster, including its scientific narrative, figures, and presentation of the results. My principal contributions include:
 
-The accompanying NIH/NLM research poster describes the project and its results. **This repository is a public presentation of the approved poster, not a release of the underlying research code or data.**
+- Developing and evaluating the K562 enhancer-classification workflow using AlphaGenome-derived regulatory features and CNN modeling.
+- Implementing and analyzing REF/ALT regulatory variant-effect predictions and comparisons with independent K562 SuRE and MPRA measurements.
+- Integrating predicted RNA effects with independent eQTL, chromatin-contact, and enhancer–gene evidence to prioritize candidate variant-to-gene relationships.
+- Running the computational analyses, interpreting the results and their limitations, and preparing the research poster.
+
+**Manuscript status:** A **first-author manuscript is in preparation** based on this ongoing research. It is not yet published or accepted.
+
+This is collaborative research at NIH/NLM. **Gaetano Manzo** contributed research mentorship and scientific collaboration, and **Ivan Ovcharenko** is the supervising principal investigator. Both are credited as coauthors of the approved poster.
+
+## Research question
+
+Noncoding genetic variants can alter enhancer activity, but connecting those changes to downstream gene expression and identifying plausible target genes remains challenging. This project asks whether K562 enhancer classification, AlphaGenome-predicted RNA effects, and independent gene-link evidence can help prioritize regulatory variant-to-gene hypotheses.
 
 ## Approach
 
-1. **Regulatory feature modeling:** Use AlphaGenome-derived chromatin/regulatory features and a CNN to classify K562 enhancer versus control intervals.
-2. **Variant-effect scoring:** Compare reference and alternate sequence predictions to assess changes in enhancer activity, retaining continuous scores and identifying predicted enhancer-state changes at a defined threshold.
-3. **Independent comparison:** Compare predicted enhancer-effect directions with K562 SuRE and MPRA reporter-assay measurements.
-4. **Candidate gene prioritization:** Combine enhancer effects, AlphaGenome RNA predictions, and external eQTL, chromatin-contact, and enhancer–gene evidence to prioritize candidate target genes.
+1. **Enhancer classification:** Integrate AlphaGenome-derived multimodal regulatory features and train a CNN to distinguish K562 enhancer and control intervals.
+2. **Variant-effect scoring:** Compare reference and alternate sequence predictions, using both continuous scores and threshold-based enhancer-state changes.
+3. **Independent experimental comparison:** Assess predicted effect directions using published K562 SuRE and MPRA reporter-assay measurements.
+4. **Target-gene prioritization:** Combine enhancer effects, AlphaGenome RNA predictions, and independently sourced eQTL, 3D-contact, and enhancer–gene link evidence.
 
-## Selected findings from the poster
+## Selected findings from the approved poster
 
 | Analysis | Poster-reported result |
 | --- | --- |
-| K562 enhancer classifier | Validation AUROC **0.9803**, AUPRC **0.9827** |
-| Variant enhancer-state changes | **29** threshold-crossing variants: **23** predicted enhancer losses and **6** gains |
+| K562 enhancer classifier | Validation AUROC **0.9803** and AUPRC **0.9827** |
+| Enhancer-state changes | **29** threshold-crossing variants: **23** predicted enhancer losses and **6** gains |
 | Reporter-assay direction comparisons | **76%** K562 SuRE; **74%** K562 MPRA; **70%** same direction across all three |
-| Variant-to-gene evidence | **24/29** threshold-crossing variants had empirical gene-link evidence |
-| Enhancer/RNA consistency | **26/28** variants showed enhancer–RNA directional coherence in the reported subset |
+| Empirical variant–gene links | **24/29** threshold-crossing variants had empirical gene-link evidence |
+| Enhancer–RNA coherence | **26/28** variants showed directional coherence in the reported subset |
 
-The gene-link analyses are used to generate and prioritize *hypotheses*, not to assert experimental proof of causal target genes.
+These results support **evidence-guided candidate variant-to-gene prioritization**, not independent experimental proof of causal gene regulation.
 
-## Authors and acknowledgments
+## Materials and research status
 
-**Yash Maheshwaran, Gaetano Manzo, Ivan Ovcharenko**  
-National Library of Medicine, National Institutes of Health
+- **[Approved NIH poster (PDF)](NIH_AlphaGenome_Poster_Yash_Maheshwaran.pdf)**: Publicly shared with authorization.
+- **Underlying research code and data**: Not publicly available. The active NIH project, ongoing analyses, and unpublished manuscript materials remain private.
 
-The research was supported by the NIH/NLM Division of Intramural Research and DSI program and used NIH Biowulf high-performance computing resources.
+This repository hosts an approved scientific poster and its contextual summary; it is **not** the full NIH research codebase.
 
-## Materials and availability
+## Acknowledgments
 
-The approved poster PDF is intended to be hosted in this repository. The active NIH research repository and its unpublished analyses, source code, and underlying data remain private. Public release of this poster does **not** imply that the broader research project is open source.
-
-Please consult the poster for figures, detailed methods, and literature references.
+Research performed at the National Library of Medicine, National Institutes of Health, with Gaetano Manzo and Ivan Ovcharenko. Supported by NIH/NLM's Division of Intramural Research and DSI program; computations used NIH Biowulf HPC resources. See the poster for figures, scientific references, and further details.
